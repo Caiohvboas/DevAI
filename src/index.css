@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Portfolio Design System - Futuristic Tech Theme */
+
+@layer base {
+  :root {
+    /* Base Colors - Dark theme for tech feel */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    /* Glass morphism and cards */
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --glass: 240 10% 8% / 0.5;
+    --glass-border: 240 30% 50% / 0.2;
+
+    /* Tech gradient colors */
+    --primary: 240 100% 65%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 270 100% 70%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 180 100% 65%;
+    --accent-foreground: 240 10% 3.9%;
+
+    /* Neon colors for highlights */
+    --neon-blue: 215 100% 60%;
+    --neon-purple: 270 100% 70%;
+    --neon-cyan: 180 100% 65%;
+    --neon-green: 140 100% 60%;
+
+    /* Interactive states */
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --hover: 240 30% 20%;
+    --border: 240 30% 18%;
+    --input: 240 30% 18%;
+    --ring: 240 100% 65%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(240 100% 65%), hsl(270 100% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(270 100% 70%), hsl(180 100% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(240 100% 65%), hsl(270 100% 70%), hsl(180 100% 65%));
+    --gradient-card: linear-gradient(135deg, hsl(240 10% 8% / 0.8), hsl(240 30% 15% / 0.6));
+
+    /* Shadows and glows */
+    --shadow-neon: 0 0 20px hsl(240 100% 65% / 0.3);
+    --shadow-purple: 0 0 30px hsl(270 100% 70% / 0.2);
+    --shadow-glass: 0 8px 32px hsl(240 10% 3.9% / 0.37);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    overflow-x: hidden;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
