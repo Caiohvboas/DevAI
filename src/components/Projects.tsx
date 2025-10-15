@@ -24,7 +24,7 @@ const Projects = () => {
     {
       title: "E-commerce Futurista",
       description: "Plataforma de e-commerce moderna com design futurista, carrinho inteligente e recomendações personalizadas por IA.",
-      image: "public/images/neoshop.jpg",
+      image: "images/neoshop.jpg",
       technologies: ["Next.js", "Supabase", "Framer Motion", "Stripe"],
       icon: Zap,
       gradient: "from-neon-purple to-neon-cyan",
