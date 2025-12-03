@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: devia-n8n-caio
+    env: docker
+    plan: free
+    # Puxe a imagem pública do n8n do Docker Hub
+    image:
+      url: n8nio/n8n:latest
+    # Garante que os dados (workflows, credenciais) não sejam perdidos
+    disks:
+      - name: n8n-data
+        mountPath: /home/node/.n8n
+        sizeGB: 1
+    # Variáveis de ambiente necessárias para o n8n
+    envVars:
+      - key: TZ
+        value: America/Sao_Paulo
+      - key: N8N_HOST
+        value: 0.0.0.0
+      - key: N8N_CORS_ALLOWED_ORIGINS
+        value: https://Caiohvboas.github.io,http://localhost:8080
