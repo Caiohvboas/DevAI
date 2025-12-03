@@ -3,15 +3,12 @@ services:
     name: devia-n8n-caio
     env: docker
     plan: free
-    # Puxe a imagem pública do n8n do Docker Hub
     image:
       url: n8nio/n8n:latest
-    # Garante que os dados (workflows, credenciais) não sejam perdidos
     disks:
       - name: n8n-data
         mountPath: /home/node/.n8n
         sizeGB: 1
-    # Variáveis de ambiente necessárias para o n8n
     envVars:
       - key: TZ
         value: America/Sao_Paulo
