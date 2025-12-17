@@ -16,3 +16,5 @@ services:
         value: 0.0.0.0
       - key: N8N_CORS_ALLOWED_ORIGINS
         value: https://Caiohvboas.github.io,http://localhost:8080
+      - key: WEBHOOK_URL
+        value: https://devai-391r.onrender.com/
