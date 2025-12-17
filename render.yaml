@@ -18,5 +18,5 @@ services:
         value: https://Caiohvboas.github.io,http://localhost:8080
       # IMPORTANTE: Substitua a URL abaixo pela URL real que aparece no dashboard do Render
       - key: WEBHOOK_URL
-        value: https://devia-n8n-caio.onrender.com/
+        value: https://devai-vqj5.onrender.com
       
