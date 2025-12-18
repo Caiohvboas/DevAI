@@ -5,10 +5,6 @@ services:
     plan: free
     image:
       url: n8nio/n8n:latest
-    disks:
-      - name: n8n-data
-        mountPath: /home/node/.n8n
-        sizeGB: 1
     envVars:
       - key: TZ
         value: America/Sao_Paulo
@@ -19,4 +15,16 @@ services:
       # IMPORTANTE: Substitua a URL abaixo pela URL real que aparece no dashboard do Render
       - key: WEBHOOK_URL
         value: https://devai-vqj5.onrender.com
-      
+      # --- Configuração do Banco de Dados (Supabase) ---
+      - key: DB_TYPE
+        value: postgresdb
+      - key: DB_POSTGRESDB_HOST
+        value: db.bkzuzlsvlpyppowxebty.supabase.co
+      - key: DB_POSTGRESDB_PORT
+        value: 5432
+      - key: DB_POSTGRESDB_DATABASE
+        value: postgres
+      - key: DB_POSTGRESDB_USER
+        value: postgres
+      - key: DB_POSTGRESDB_PASSWORD
+        value: K!X@Hwv27Eqc6Q$
