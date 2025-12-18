@@ -1,21 +1,28 @@
 services:
-  - type: web
-    name: devia-n8n-caio
-    env: docker
-    plan: free
+  # Lista de serviços a serem implantados no Render
+  - type: web                 # Tipo de serviço: Aplicação Web (acessível via HTTP)
+    name: devia-n8n-caio      # Nome único do serviço no painel do Render
+    env: docker               # Ambiente de execução: Container Docker
+    plan: free                # Plano de cobrança: Gratuito (Free)
     image:
-      url: n8nio/n8n:latest
+      url: n8nio/n8n:latest   # Imagem Docker oficial do n8n a ser utilizada
     envVars:
+      # Configurações Gerais
       - key: TZ
-        value: America/Sao_Paulo
+        value: America/Sao_Paulo # Define o fuso horário do servidor
       - key: N8N_HOST
-        value: 0.0.0.0
+        value: 0.0.0.0        # Ouve em todas as interfaces de rede (necessário para o Render)
       - key: N8N_CORS_ALLOWED_ORIGINS
-        value: https://Caiohvboas.github.io,http://localhost:8080
-      # IMPORTANTE: Substitua a URL abaixo pela URL real que aparece no dashboard do Render
+        value: https://Caiohvboas.github.io,http://localhost:8080 # Permite requisições desses domínios (CORS)
+      
+      # URL Pública (Webhook)
+      # Define a URL base para os webhooks gerados pelo n8n
       - key: WEBHOOK_URL
         value: https://devai-vqj5.onrender.com
+      
       # --- Configuração do Banco de Dados (Supabase) ---
+      # Conecta a um banco PostgreSQL externo para persistir dados (workflows, usuários, execuções)
+      # Isso evita a perda de dados quando o serviço gratuito do Render reinicia.
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_HOST
